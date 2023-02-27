@@ -1,0 +1,161 @@
+body{
+    margin:20px 50px;
+    padding:0px;
+    background-color: #FFF6ED;
+}
+nav{
+    display:flex;
+}
+.flex-container{
+    display:flex;
+}
+.container {
+    margin:15px 0;
+    padding:10px;
+    border-radius:25px;
+    background-color: #FFDBBC;
+}
+h1, h2,h3{
+    font-family: 'Poppins', sans-serif;
+}
+h1{
+    font-size:30px;
+}
+p{  
+    font-family: 'Exo', sans-serif;
+    font-size:17px;
+}
+
+.center-up-bottom{
+    margin-top:auto; 
+    margin-bottom:auto;
+}
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #962E40;
+    border-radius: 50%;
+    display: inline-block;
+    }
+.head{
+    margin:20px;
+    display:flex;
+}
+@media (max-width: 1130px) {
+    .head{
+        display:block;
+    }
+    .head-item{
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+.trailer{
+    display:block;
+    height:350px;
+    width:600px;
+}
+.description{
+    display: inline-flex;
+    font-weight:bold;
+    min-width: 130px;
+    width: 8%;
+    height: 20px;
+
+}
+/* ##########---ACTORI---##########*/
+.actor-container{
+    display:grid;
+    align-items:center;
+    grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 1100px) {
+    .actor-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 760px) {
+    .actor-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .actor-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.actor{
+    margin:10px auto;
+}
+.actor p{
+    margin:5px;
+    text-align:center;
+}
+.actor-img{
+    display:block;
+    border-radius:50%;
+    width:100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.acting{
+    font-size:14px;
+    color:#696969;
+}
+
+/* ##########---GALERIE---########## */ 
+
+#galerie img{
+    margin: 0px auto 20px auto;
+    width:250px;
+    height:140px;
+}
+
+.galerie-container{
+    display:grid;
+    align-items:center;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left:auto;
+    margin-right:auto;
+}
+@media (max-width: 1500px) {
+    .galerie-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 1220px) {
+    .galerie-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 960px) {
+    .galerie-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 690px) {
+    .galerie-container{
+        grid-template-columns: auto;
+    }
+}
+
+/* ##########---RECENZII---########## */ 
+.recenzie{
+    margin:30px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  color:rgb(255, 187, 0);
+}
+
+.date{
+    color:#696969;
+    margin-left:10px;
+    font-size:15px;
+}
