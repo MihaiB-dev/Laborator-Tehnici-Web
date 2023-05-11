@@ -1,0 +1,87 @@
+html {
+	font-size:12px;
+}
+
+.buton {
+	border:2px brown ridge;
+	background: #ffc37a;
+	font-weight:bold;
+	color:white;
+	text-shadow:0px 0px 4px black,0px 0px 3px black,0px 0px 2px black,0px 0px 2px black;
+	box-shadow:0px -3px 2px grey;
+	height:2em;
+	line-height:2em;
+	width:120px;
+	text-align:center;
+	display:inline-block;
+	font-size:0.9em;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+
+.buton:hover{
+	background:orange;
+}
+#coloane {
+	display:flex;
+	flex-wrap: wrap;
+
+}
+#coloane > section{
+	flex-basis: 200px;
+	flex-grow: 1;
+	border: 1px solid green;
+	padding:2px;
+	min-width:100px;
+	
+}
+/* #ord_dr_s:hover {
+	background: green;
+} */
+
+
+#ord_dr_s:hover ~ #coloane{
+	display: flex;
+	flex-direction: row-reverse;
+}
+#ord_3124:hover ~ #coloane :nth-child(1) {
+
+	order: 2;
+}
+
+#ord_3124:hover ~ #coloane :nth-child(2) {
+
+	order: 3;
+}
+
+#ord_3124:hover ~ #coloane :nth-child(3) {
+
+	order: 1;
+}
+
+#ord_3124:hover ~ #coloane :nth-child(4) {
+	order: 4;
+}
+
+/* #imagini{
+	display:flex;
+	flex-wrap: nowrap;
+	align-self: flex-start;
+	/* flex-direction: row-reverse; */
+/* }
+#imagini:not(h3)
+{	
+	align-self: flex-start;
+	flex-wrap: 1;
+	flex-direction:row-reverse;
+}
+#imagini h3 {
+	display:block;
+}
+
+div#coloane{
+	border-top: 3px inset #BBB;
+}  */
+
+
+/* rezolvare */

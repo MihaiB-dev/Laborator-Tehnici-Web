@@ -1,0 +1,62 @@
+body {
+    margin:0px;
+}
+header {
+    display:flex;
+    height:80px;
+    background-color: aquamarine;
+    align-items: center;
+   
+}
+header img {
+    justify-content: flex-end;
+    position:fixed;
+    right:0px;
+    width:10vw;
+    height:80px;
+    
+}
+ul {
+    padding:0px;
+    margin:0px;
+    list-style-type: none;
+}
+.meniu {
+    display:inline-flex;
+    height:50px;
+    width:100%;
+    background-color: black;
+    color:white;
+}
+
+.meniu > li {
+    padding-top:15px;
+    padding-right: 20px;
+    width:5rem;
+}
+.meniu > li:hover  .submeniu{
+    visibility: visible;
+}
+.meniu > li:nth-child(1){
+ padding-left: 20px;
+}
+
+
+.submeniu {
+    display:block;
+    margin-top:16px;
+    width:6rem;
+    padding:10px;
+    background-color:bisque;
+    visibility:hidden;
+}
+.submeniu li{
+    padding:5px;
+}
+
+#continut {
+    display:flex;
+    justify-content:center;
+    width:95%;
+    height:auto;
+}
