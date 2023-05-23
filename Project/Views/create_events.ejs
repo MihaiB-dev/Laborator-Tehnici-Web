@@ -1,0 +1,44 @@
+<%- include('header') -%>
+<script>
+    //get a min day for date_input today
+    window.onload = function(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+    dd = '0' + dd
+    }
+
+    if (mm < 10) {
+    mm = '0' + mm
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('date_input').setAttribute("min", today);
+    }
+//---------------------------------------------------------------
+</script>
+
+<h1>Create Event</h1>
+<form action="/create_event" method = "post">
+    <label>Title:</label>
+    <input type="text" name="Title" placeholder="Events Title" required/>
+
+    <label>Description:</label>
+    <input type="textarea" rows="4" cols="30" name="Description" placeholder="Describe your event"/>
+
+    <label>Date:</label>
+    <input id="date_input" type="date" name="Date_ev"/>
+
+    <label>Max Tickets:</label>
+    <input type="number" name="Max_Tickets"/>
+
+    <label>Link Image: </label>
+    <input type="text" name="Link_Image"/>
+
+    <button type="Submit" name="submit">Create</button>
+
+</form>
+<%- include('footer') -%>

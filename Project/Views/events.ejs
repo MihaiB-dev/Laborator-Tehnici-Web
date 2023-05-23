@@ -1,0 +1,13 @@
+<%- include('header') -%>
+<h1>Events</h1>
+<% for(var i = 0; i < events.length; i++){ %>
+    <div class="event_container">
+        <h3><%= events[i].Title%></h3>
+        <img src="<%=events[i].Link_Image%>">
+        <p><%= events[i].Description%></p>
+        <p><%= events[i].Date_ev%></p>
+        <p>Max tickets: <%= events[i].Max_Tickets%></p>
+    </div>
+    
+    <% } %>
+<%- include('footer') -%>
