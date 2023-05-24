@@ -139,7 +139,7 @@ body {
   background: transparent;
   border: 1px solid #5f6368;
   color: #1b1c1d;
-
+  width:100%;
   font-size: 1.2rem;
   padding: 10px 8px;
 
@@ -170,10 +170,9 @@ body {
 }
 #create_event_form button {
     background: #19A7CE;
-    box-shadow: rgba(231, 234, 236, 0.2) 0px 8px 24px;
     text-decoration: none;
     color: #202124;
-
+    border:none;
     height: 50px;
     max-width: 120px;
     margin: 10px 0;
