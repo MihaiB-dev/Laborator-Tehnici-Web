@@ -22,23 +22,35 @@
 </script>
 
 <h1>Create Event</h1>
-<form action="/create_event" method = "post">
-    <label>Title:</label>
-    <input type="text" name="Title" placeholder="Events Title" required/>
+<form action="/create_event" id="create_event_form" method = "post">
+    <div>
+        <span>Title:</span>
+        <input type="text" name="Title" placeholder="Events Title" autofocus required/>
+    </div>
 
-    <label>Description:</label>
-    <input type="textarea" rows="4" cols="30" name="Description" placeholder="Describe your event"/>
+    <div>
+        <span>Date:</span>
+        <input id="date_input" type="date" name="Date_ev"/>
+    </div>
+    
+    <div>
+        <span>Max Tickets:</span>
+        <input type="number" name="Max_Tickets"/>
+    </div>
+    
+    <div>
+        <span>Link Image: </span>
+        <input type="text" name="Link_Image"/>
+    </div>
 
-    <label>Date:</label>
-    <input id="date_input" type="date" name="Date_ev"/>
-
-    <label>Max Tickets:</label>
-    <input type="number" name="Max_Tickets"/>
-
-    <label>Link Image: </label>
-    <input type="text" name="Link_Image"/>
+    <div>
+        <span>Description:</span>
+        <textarea type="textarea" name="Description" rows="20" cols="40" placeholder="You can type in markdown text. Make sure to write it properly"></textarea>
+    </div>
+    
 
     <button type="Submit" name="submit">Create</button>
 
 </form>
+
 <%- include('footer') -%>

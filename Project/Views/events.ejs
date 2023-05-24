@@ -1,13 +1,80 @@
 <%- include('header') -%>
-<h1>Events</h1>
-<% for(var i = 0; i < events.length; i++){ %>
-    <div class="event_container">
-        <h3><%= events[i].Title%></h3>
-        <img src="<%=events[i].Link_Image%>">
-        <p><%= events[i].Description%></p>
-        <p><%= events[i].Date_ev%></p>
-        <p>Max tickets: <%= events[i].Max_Tickets%></p>
-    </div>
+<script>
+    function randomInt(a,b){
+        return Math.floor(Math.random()*(b-a)+a); // ia un numar intre 10 si 25
+    }
+    function randomColor()
+    {
+        const r= randomInt(0,255);
+        const g = randomInt(0,255);
+        const b = randomInt(0,255);
+        return `rgb(${r}, ${g}, ${b})`;
+    }
     
-    <% } %>
+    function change(value){
+        var button = document.getElementById(value); //get the button by id
+        button.style.top = randomInt(4,40) + 'rem'; //change top 
+        button.style.left = randomInt(0,40) + 'rem'; //change left
+        button.style.backgroundColor = randomColor(); //change the collor
+            
+    }
+
+    localStorage.setItem("IDButton",2);//create a localstorage to count the buttons
+
+    function myfunction(value){
+        const myTimeout = setTimeout(function(){change(value)},130); // the user has 200 ms to touch the button before the changes
+        //when hover, we add a new button
+        var localID = localStorage.getItem("IDButton");
+        var button = document.getElementById(value);
+        const anotherTimeout = setTimeout(function(){
+                const buttonp = document.createElement("button");//create the button
+                buttonp.className = "easter_button"; //add class
+                buttonp.id="button"+localID.toString(); //add id using a local storage
+                buttonp.onmouseover = function(){myfunction('button' + localID)};//add onmouseover
+                buttonp.onclick = function(){hurray('button' + localID)};// add onclick
+                buttonp.style.display = "block"; //change style
+                buttonp.innerHTML = "Click Me"; //change style
+                buttonp.style.top = randomInt(4,40) + 'rem'; //change style
+                buttonp.style.left = randomInt(0,40) + 'rem'; //change style
+                buttonp.style.backgroundColor = randomColor(); //change style
+
+                localStorage.setItem("IDButton",Number(localID) + 1); //update the local storage
+                document.body.appendChild(buttonp); //add the button to the body
+        },300)
+        
+    }
+    function hurray(value){//if it's clicked we can remove the button
+        alert("You clicked the button, congratss!!")//print an alert for the user and congrats him
+        var button = document.getElementById(value); 
+        button.style.display = "none"; //remvoe the button
+    }
+    function stop(){
+        var button1 = document.getElementsByClassName("easter_button"); //get all the buttons created
+        Array.from(button1).forEach((el) => {el.remove();})//for reach button, we remove them
+
+        var button2 = document.getElementsByClassName("stop_button")[0].remove(); //remove the big button
+
+        alert("It's our secret now");
+        location.href = '/'; //redirect the user to the main page.
+    }
+</script>
+
+<button class="easter_button" id="button1" onmouseover = "myfunction('button1')" onclick="hurray('button1')" style="display:<%=type1%>">Click Me</button>
+<button class="stop_button" onclick="stop()" style="display:<%=type1%>">Stop the button</button>
+<h1>Events</h1>
+<div class="wrapper">
+    <% for(var i = 0; i < events.length; i++){ %>
+        <div class="event_container" onclick="location.href='<%= events[i].Title%>';">
+            <h3><%= events[i].Title%></h3>
+            <img src="<%=events[i].Link_Image%>">
+
+            <!-- <p><%= events[i].Description%></p> -->
+            <p>Date of the event: <%= events[i].Date_ev%></p>
+            <p>Max tickets: <%= events[i].Max_Tickets%></p>
+        </div>
+        
+        <% } %>
+</div>
+
+
 <%- include('footer') -%>
