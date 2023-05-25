@@ -13,7 +13,6 @@ body {
 }
 .All_elements{
   margin-left:2rem;
-  /* flex-grow:1; */
   margin-top:2rem;
 }
 .navbar ul {
@@ -72,7 +71,7 @@ body {
   text-align: left;
 }
 .navbar li:first-of-type{
-  margin-right: 1rem;
+  margin-right: 4rem;
 }
 
 .navbar .dropdown-content a:hover {background-color: #f1f1f1;}
