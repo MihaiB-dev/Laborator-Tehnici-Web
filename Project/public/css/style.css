@@ -4,6 +4,9 @@ body {
   background-color: #F6F1F1;
   margin:0;
 }
+.All_elements{
+  margin-left:2rem;
+}
 .navbar ul {
   list-style-type: none;
   margin: 0;
@@ -201,7 +204,7 @@ body {
       grid-template-columns: repeat(1, 1fr);
   }
 }
-
+/* css for create_events */
 #create_event_form{
       margin:40px;
     max-width:900px;
@@ -287,4 +290,40 @@ body {
 #create_event_form button:hover {
     background: #146C94;
     color:white;
+}
+
+
+/* css for event_zone */
+.event{
+  margin: 2rem auto 0 auto;
+  width: 50%;
+}
+.event_img{
+  display:block;
+  
+  height:auto;
+  width:500px;
+  border-radius: 1rem;
+}
+.description{
+  width:auto;
+  max-width: 100%;
+  background-color: #AFD3E2;
+  border-radius: 20px;
+  padding:0 1rem 0.7rem 1rem;
+}
+@media(max-width: 500px){
+  .event_img{
+    width:300px;
+    margin:0 auto;
+  }
+  .All_elements{
+    margin:0px;
+  }
+  .event{
+
+    width: 90%;
+    margin:0 auto;
+  }
+
 }
