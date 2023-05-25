@@ -23,11 +23,11 @@ let events = [
 ];
 
 app.get("/", function(req,res){
-    res.render('events',{events:events, type1:"none", type2:"none"});
+    res.render('events',{events:events, type1:"none", type2:"none", title:"Events"});
     //res.sendFile(__dirname + "/index.html");
 });
 app.get("/create_event", function(req,res){
-    res.render('create_events');
+    res.render('create_events',{title:"Create events"});
 });
 app.post("/create_event", function(req,res){
     events.push({
@@ -42,9 +42,9 @@ app.post("/create_event", function(req,res){
 
 app.get('/:title', function(req,res){
     const title = req.params.title;
-    const result = events.filter(element => element.Title == title);
+    const result = events.filter(element => element.Title == title);//unique event withy the same name
     if(result.length != 0){
-        res.render('event_zone', {event: result[0]})
+        res.render('event_zone', {event: result[0], title:title})
     }
     {
         res.sendFile(__dirname + "/404.html");

@@ -61,7 +61,6 @@
 
 <button class="easter_button" id="button1" onmouseover = "myfunction('button1')" onclick="hurray('button1')" style="display:<%=type1%>">Click Me</button>
 <button class="stop_button" onclick="stop()" style="display:<%=type1%>">Stop the button</button>
-<h1>Events</h1>
 <div class="wrapper">
     <% for(var i = 0; i < events.length; i++){ %>
         <div class="event_container" onclick="location.href='<%= events[i].Title%>';">

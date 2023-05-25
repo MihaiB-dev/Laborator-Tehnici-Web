@@ -2,8 +2,107 @@
 
 body {
   background-color: #F6F1F1;
+  margin:0;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  margin-top:5px;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
 }
 
+.navbar span {
+  text-align: center;
+  margin:auto 1rem;
+  margin-left:45%;
+  font-size:2rem;
+
+}
+
+.navbar li {
+  float: right;
+}
+
+.navbar li a, .dropbtn {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 500ms;
+}
+
+.navbar li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(175, 211, 226,0.5);
+
+}
+
+.navbar li.dropdown {
+  display: inline-block;
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.navbar li:first-of-type{
+  margin-right: 1rem;
+}
+
+.navbar .dropdown-content a:hover {background-color: #f1f1f1;}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media(max-width:800px){
+  .navbar span {
+    display:block;
+    margin:auto auto;
+  
+  }
+  .navbar li {
+    display:inline-flex;
+    margin:0px auto;
+    float:none;
+  }
+  .navbar li:first-of-type{
+    margin-left: 25%;
+    margin-right: 0px;
+  }
+
+}
+@media(max-width:500px){
+  .navbar span {
+    display:block;
+    margin:auto auto;
+  
+  }
+  .navbar li {
+    display:inline-flex;
+    margin:0px auto;
+    float:none;
+  }
+  .navbar li:first-of-type{
+    margin-left: 3%;
+  }
+
+}
+/* ########################### */
 .easter_button {
     position:absolute;
     z-index:1;
